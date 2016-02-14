@@ -1,0 +1,22 @@
+{
+  "name": "passport-keycloak",
+  "version": "0.1.0",
+  "description": "Keycloak authentication strategy for Passport.js",
+  "repository": "https://github.com/chris-chambers/passport-keycloak",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "passport",
+    "keycloak",
+    "authentication",
+    "strategy"
+  ],
+  "author": "Christopher Chambers <chris@peanutcode.com>",
+  "license": "MIT",
+  "dependencies": {
+    "passport-oauth2": "^1.2.0",
+    "request": "^2.69.0"
+  }
+}
