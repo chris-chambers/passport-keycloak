@@ -18,5 +18,8 @@
   "dependencies": {
     "passport-oauth2": "^1.2.0",
     "request": "^2.69.0"
+  },
+  "peerDependencies": {
+    "passport": "^0.3.2"
   }
 }
