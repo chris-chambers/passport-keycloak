@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css', rel='stylesheet', media='screen')
+  body
+  .container
+    h1 Welcome, #{user.firstName}
+    p
+      a(href="/secret") Secret
+    form(method="post" action="/auth/logout")
+      .btn-group
+        button(class="btn btn-primary" type="submit" name="logout" value="app")
+          | Logout
+        button(class="btn btn-default" classtype="submit" name="logout" value="global")
+          | Logout Globally
+
+  script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')
