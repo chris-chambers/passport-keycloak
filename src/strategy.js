@@ -21,8 +21,8 @@ function Strategy(options, verify) {
     const realmURL = options.serverURL + '/auth/realms/' + options.realm;
     this.options = Object.assign({}, options, {
         realmURL,
-        authorizationURL: realmURL + '/protocol/openid-connect/login',
-        tokenURL: realmURL + '/protocol/openid-connect/access/codes',
+        authorizationURL: realmURL + '/protocol/openid-connect/auth',
+        tokenURL: realmURL + '/protocol/openid-connect/token',
         userInfoURL: realmURL + '/protocol/openid-connect/userinfo',
     });
 
