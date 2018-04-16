@@ -21,9 +21,9 @@ function Strategy(options, verify) {
     const realmURL = options.serverURL + '/auth/realms/' + options.realm;
     this.options = Object.assign({}, options, {
         realmURL,
-        authorizationURL: realmURL + '/tokens/login',
-        tokenURL: realmURL + '/tokens/access/codes',
-        userInfoURL: realmURL + '/account',
+        authorizationURL: realmURL + '/protocol/openid-connect/auth',
+        tokenURL: realmURL + '/protocol/openid-connect/token',
+        userInfoURL: realmURL + '/protocol/openid-connect/userinfo',
     });
 
     this._base = Object.getPrototypeOf(Strategy.prototype);
@@ -66,7 +66,7 @@ Strategy.prototype.logoutURL = function (redirectURL, options) {
     redirectURL = resolveURL(redirectURL, options.req, this.options);
 
     const urlObj = url.parse(this.options.realmURL, true);
-    urlObj.pathname += '/tokens/logout';
+    urlObj.pathname += '/protocol/openid-connect/logout';
     urlObj.query = { redirect_uri: redirectURL };
 
     return url.format(urlObj);
